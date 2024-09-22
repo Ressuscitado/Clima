@@ -9,7 +9,7 @@ document.querySelector('.busca').addEventListener('submit', async (event) => {
         showWarning('Carregando...');
 //URL do site da API com o ENCODE para evitar erros
 //O símbolo & é usado em URLs para separar múltiplos parâmetros de uma query string em uma requisição HTTP.
-        let url = `https://api.openweathermap.org/data/2.5/weather?q={${encodeURI(input)}}&appid=42df8471ccc17dcf241b14f890b0a807&units=metric&lang=pt_br`; //encodeURI() para evitar o problema de caracteres especiais como os espaços, etc, ele transforma o texto mas mantem esses espaços simbolizados por algum caractere especial como a %.
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(input)}&units=metric&lang=pt_br&appid=42df8471ccc17dcf241b14f890b0a807`; //encodeURI() para evitar o problema de caracteres especiais como os espaços, etc, ele transforma o texto mas mantem esses espaços simbolizados por algum caractere especial como a %.
 //APPID = APIKEY é a chave para que a API controle os acessos e pegue informações necessárias para ela, é gerada dentro do próprio site após logarmos na nossa conta nesse caso.
 //&units=metric é um parametro opcional, o padrão/standard no site vem em fahrenheit, para pegar em Celsius basta colocar units=metric. METRIC é oq usamos.
 //&lang=pt_br é um parametro opcional, o padrão é em ingles, estamos pegando em Portugues o retorno.
